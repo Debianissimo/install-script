@@ -16,7 +16,7 @@ Il team di Debianissimo **non si prende responsabilità per qualsiasi tipo di da
 
 - [Debian 9 "stretch"](https://www.debian.org/releases/stretch/debian-installer/) Base per l'installazione di ordissimo
 - Internet
-- una CPU a 64bit (`AMD64` o `x86_64`), CPU a 32bit (`i386`, `x86`) oppure ARM non sono supportate
+- una CPU a 64bit (`AMD64` o `x86_64`), CPU a 32bit (`i386`, `x86`) e ARM non sono supportate
 - 2GB di RAM
 - Capire come funziona un minimo Debian poiché è necessario editare a mano alcuni file, e potrebbero verificarsi alcuni problemi
 
@@ -131,9 +131,9 @@ VMware può essere usato per installare Ordissimo, tuttavia...
 
 I guest additions o i vmware tools NON sono necessari e non sono raccomandati, poiché non è garantito che funzionino.
 
-L'unico problema è che la risoluzione dello schermo sia un po impazzita.
+L'unico problema è che la risoluzione dello schermo è un po impazzita.
 
-per cambiare risoluzione puoi usare guardare la FAQ per la risoluzione dello schermo
+Per cambiare risoluzione puoi usare guardare la FAQ per la risoluzione dello schermo
 
 > Risoluzione dello schermo
 
