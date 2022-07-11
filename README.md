@@ -86,7 +86,30 @@ nano /usr/share/applications/xfce4-terminal.desktop
 8. Una volta riavviato sul desktop dovrebbe esserci il terminale
     - Per impostare il layout italiano **sul terminale** usare `setxkbmap it`
         - Opzionalmente si puo metterlo nel file `.bashrc`
-    - Se mostrato un errore perché il filesystem e Read-Only usare il comando `for m in $(ls /); do mount -o remount,rw /$m; done`, verranno mostrati degli errori ma non ci sarà nessun problema e il filesystem dovrebbe essere scrivibile
+    - Se mostrato un errore perché il filesystem è Read-Only guarda [**FileSystem Read-Write**](#filesystem-read-write)
+
+## FileSystem Read-Write
+
+Dato che ordissimo mette il sistema readonly (ro) by-default per qualche motivo lo si può rimettere Read/Write (r/w) in 2 modi principali.
+
+Per controllare se il sistema e stato avviato in ro o r/w un modo e provare a scrivere su una directory tipo /usr (da sudo), oppure facendo `cat /proc/cmdline` che mostrerà i parametri del kernel in cui c'è o `ro` o `rw`.
+
+Eseguire un comando ogni volta tramite bash oppure modificare la configurazione del bootloader (lilo)
+
+### Metodo 1 (non permanente):
+- eseguire `for m in $(ls /); do mount -o remount,rw /$m; done`
+  - Il comando esegue `ls /`,
+  per ogni file / cartella che trova prova a rimontare la suddetta cartella in r/w, pertanto quanto tenta di montare un file ci sara un errore
+
+### Metodo 2 (permanente):
+1. Prendere un text editor (nano/vim/micro/ecc) ed aprire il file `/etc/lilo.conf`
+1. Ci saranno 3 `Read-Only` nel file in totale, vanno cambiati tutti e 3 con `Read-Write`
+1. Salvare ed uscire
+1. Eseguire `sudo lilo`
+1. Riavviare
+1. Verificare che si possa scrivere
+
+Se avete usato GRUB o qualsiasi altro bootloader ci sono 2 possibilità, il sistema sia gia r/w oppure ci siano dei parametri per metterlo ro, provate a controllare il file di configurazione del bootloader che state usando.
 
 ---
 
