@@ -1,5 +1,14 @@
 #! /usr/bin/env bash
 
+set -e
+
+
+
+
+
+
+
+
 echo "!! I dati presenti sul disco potrebbero venir cancellati/corrotti, il team di Debianissimo non si prende la responsabilita per nessun tipo di danno !!"
 echo ''
 
