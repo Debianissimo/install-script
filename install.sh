@@ -8,6 +8,7 @@ set -e
 
 
 
+
 echo "!! I dati presenti sul disco potrebbero venir cancellati/corrotti, il team di Debianissimo non si prende la responsabilita per nessun tipo di danno !!"
 echo ''
 
@@ -92,8 +93,7 @@ if [ "$1" = "--advanced" ]
     done
 fi
 
-apt install o-base-debian ssmtp
-apt install ordissimo ordissimo-langue-all neofetch
+apt install o-base-debian ssmtp && apt install ordissimo ordissimo-langue-all neofetch
 
 echo ''
 echo "L'instllazione di ordissimo e terminata, installando il lilo"
