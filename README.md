@@ -21,7 +21,7 @@ Il team di Debianissimo **non si prende responsabilità per qualsiasi tipo di da
 
 ## Installazione
 
-<font size="6">Viene altamente scoraggiato l'uso di Hardware vero, quindi si consiglia di utilizzare una macchina virtuale, fatta con VirtualBox.</font>
+# Viene altamente scoraggiato l'uso di Hardware vero, quindi si consiglia di utilizzare una macchina virtuale, fatta con VirtualBox.
 
 
 
