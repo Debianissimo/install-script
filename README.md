@@ -13,7 +13,6 @@ Il team di Debianissimo **non si prende responsabilità per qualsiasi tipo di da
 ---
 
 ## Requisiti
-
 - [Debian 9 "stretch"](https://www.debian.org/releases/stretch/debian-installer/) Base per l'installazione di ordissimo
 - Internet
 - una CPU a 64bit (`AMD64` o `x86_64`), CPU a 32bit (`i386`, `x86`) e ARM non sono supportate
@@ -22,7 +21,9 @@ Il team di Debianissimo **non si prende responsabilità per qualsiasi tipo di da
 
 ## Installazione
 
-Viene altamente scoraggiato l'uso di Hardware vero, quindi si consiglia di utilizzare una macchina virtuale, fatta con VirtualBox.
+<font size="6">Viene altamente scoraggiato l'uso di Hardware vero, quindi si consiglia di utilizzare una macchina virtuale, fatta con VirtualBox.</font>
+
+
 
 1. Installare Debian 9
     1. Usare un disco da minimo 64 GB
