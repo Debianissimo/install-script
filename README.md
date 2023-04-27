@@ -39,7 +39,7 @@ Viene altamente scoraggiato l'uso di [Hardware fisico](#--hardware-fisico), quin
     1. Usare come password `ordissimo`
     1. Durante il setup, l'installer chiederà di configurare il gestore dei pacchetti, una delle domande durante questo passaggio è se si vuole configurare un altro cd, rispondere di no, successivamente sarà chiesto di impostare una nazione da cui impostare i mirror, fare indietro, premere continua se si presenta e un errore, e alla domanda se si vuole continuare __senza__ un mirror di rete rispondere si
         - Questi errori che si presentano vanno sistemati a mano successivamente
-    1. Se dovesse chiedere se si vuole installare un "Desktop Enviroment", o "Ambiente desktop", selezionarlo poichè causa problemi con l'installazione di ordissimo, in caso non si presenta la scelta, **NON** e un problema
+    1. Se dovesse chiedere se si vuole installare un "Desktop Enviroment", o "Ambiente desktop", NON installarlo poichè causa problemi con l'installazione di ordissimo, in caso non si presenta la scelta, **NON** e un problema
 1. Una volta che si e avviato il sistema ci si trovera nella `tty`, effettuare il login con le credenziali dell'utente root, quindi come username "root" e come password quella inserita precentemente
     1. Usando il editor di testo, nano e vi sono già installati, modificare il file `/etc/apt/souces.list` e fare le seguenti modifiche:
         - Aggiungere un `#` all'inizio delle righe che iniziano con `deb cdrom:[`, se non sono gia presenti
