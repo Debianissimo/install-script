@@ -111,7 +111,7 @@ Il terminale NON è installato by-default su ordissimo, perciò bisogna installa
 #### - Da sistema pre-riavvio dopo l'esecuzione di install.sh
 
 > **Warning**:
-> Questo sistema NON funziona se si e gia effettuato il riavvio dopo aver eseguito lo script di installazione, per installare il terminale in questa situazione fare riferimento alla [sezione sotto](#da-sistema-post-riavvio-dopo-installsh)
+> Questo sistema NON funziona se si e gia effettuato il riavvio dopo aver eseguito lo script di installazione, per installare il terminale in questa situazione fare riferimento alla [sezione sotto](#--da-sistema-post-riavvio-dopo-installsh)
 
 1. Eseguire `apt install xfce4-terminal`
 1. Editare il file `/usr/share/applications/xfce4-terminal.desktop` e apportare la seguente modifica
