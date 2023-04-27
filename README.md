@@ -28,7 +28,7 @@ Viene altamente scoraggiato l'uso di [Hardware fisico](#--hardware-fisico), quin
     1. Usare un disco da minimo [64 GB](#--disco)
         - Creare una partizione da minimo 15 GB come primaria di tipo `ext4`, con label `root`, punto di montaggio `/`, e avviabile
         - Creare una partizione da 2 GB come primaria di tipo `linux swap`
-            - La partizione swap e opzionale e la si puo fare grante quanto si vuole a patto che resta spazio per il resto delle partizioni
+            - La partizione swap e opzionale e la si puo fare grande quanto si vuole a patto che resta spazio per il resto delle partizioni
         - Create una partizione da minimo 30 GB come logica di tipo `ext4`, con label `var`, punto di montaggio `/var`
         - Creare una partizione da minimo 1 GB come logica di tipo `ext4`, con label `secours`, punto di montaggio custom `/mnt/secours`
         - Creare una partizione con lo spazio rimanente come logica di tipo `ext4`, con label `home`, punto di montaggio `/home`
