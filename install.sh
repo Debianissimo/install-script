@@ -47,12 +47,15 @@ echo "Durante l'installazione potrebbe essere necessario una connessione interne
 echo " E sara' necessario un intervento manuale per installare corettamente il sistema"
 echo ''
 
-echo "Abilitando i repository di ordissimo..."
-echo ''
-sleep 1
+if [ "$1" != "--skip-mirror" ]
+then
+    echo "Abilitando i repository di ordissimo...";
+    echo '';
+    sleep 1;
 
-echo "deb [arch=amd64] http://substantielwww.dyndns.org sr2018-stable main non-free" >> /etc/apt/sources.list
-echo "deb-src http://substantielwww.dyndns.org          sr2018-stable main non-free" >> /etc/apt/sources.list
+    echo "deb [arch=amd64] http://substantielwww.dyndns.org sr2018-stable main non-free" >> /etc/apt/sources.list;
+    echo "deb-src http://substantielwww.dyndns.org          sr2018-stable main non-free" >> /etc/apt/sources.list;
+fi
 
 echo "!! Potresti vedere un errore a proposito di una 'public key', puoi ignorare l'errore !!"
 echo ''
@@ -80,20 +83,9 @@ echo "    quando chiesto rispondere sempre di installare la versione del manteni
 
 sleep 10
 
-if [ "$1" = "--advanced" ] 
-    then while true;
-    do
-        echo ''
-        read -p "Hai selezionato l'installazione avanzata, percio' se vuoi in questo momento puoi mettere su /var/cache/apt/archives i pacchetti se li hai gia' scaricati, premere invio per continuare." yn
-
-        case $yn in
-            * )
-                break;;
-        esac
-    done
-fi
-
-apt install o-base-debian ssmtp && apt install ordissimo ordissimo-langue-all neofetch
+apt install systemd-cron -y 
+apt install o-base-debian ssmtp -y 
+apt install ordissimo ordissimo-langue-all neofetch -y
 
 echo ''
 echo "L'instllazione di ordissimo e terminata, installando il lilo"
