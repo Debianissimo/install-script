@@ -175,6 +175,12 @@ Se invence non hai seguito tutta la guida, non hai formattato il disco come e sc
 
 Noi siamo disposti ad aiutarti solo se segui la guida presente in questo file.
  
+### - **Aggiornamenti**
+
+Nelle impostazioni di Ordissimo e presente un tasto per aggiornare il sistema, quel tasto e noto per rompere il sistema / non far nulla, quindi e meglio evitare di cliccarlo per quanto inteoria non dovrebbe rompere nulla
+
+Se lo vuoi premere lo stesso ti prendi la responsabilità di ciò e noi non siamo disposti ad aiutarti
+ 
 ### - **Dual boot con windows**
 
 Non abbiamo mai provato a fare un dual boot con Ordissimo pero ricordati che Ordissimo viene installato come BIOS non come UEFI in questa guida, perciò potresti aver problemi con il boot di windows, inoltre ordissimo e consigliato che venga installato soltanto in macchina virtuale poiche su hardware fisico da problemi e ci sono parecchi problemi dagli esperimenti che abbiamo fatto
