@@ -22,10 +22,10 @@ Il team di Debianissimo **non si prende responsabilità per qualsiasi tipo di da
 
 ## Installazione
 
-Viene altamente scoraggiato l'uso di [Hardware fisico](#hardware-fisico), quindi si consiglia di utilizzare una macchina virtuale, fatta con VirtualBox. Per maggiori infomazioni controlla il [FAQ](#software-di-vm)
+Viene altamente scoraggiato l'uso di [Hardware fisico](#--hardware-fisico), quindi si consiglia di utilizzare una macchina virtuale, fatta con VirtualBox. Per maggiori infomazioni controlla il [FAQ](#--software-di-vm)
 
 1. Installare Debian 9
-    1. Usare un disco da minimo [64 GB](#disco)
+    1. Usare un disco da minimo [64 GB](#--disco)
         - Creare una partizione da minimo 15 GB come primaria di tipo `ext4`, con label `root`, punto di montaggio `/`, e avviabile
         - Creare una partizione da 2 GB come primaria di tipo `linux swap`
             - La partizione swap e opzionale e la si puo fare grante quanto si vuole a patto che resta spazio per il resto delle partizioni
@@ -64,7 +64,7 @@ Viene altamente scoraggiato l'uso di [Hardware fisico](#hardware-fisico), quindi
 1. Aggiungere l'utente `ordissimo` al gruppo `sudo` e impostare la seguente regola, sostituendo quella per `%sudo` presente di default con `%sudo   ALL=(ALL) NOPASSWD:ALL` nel file fornito dal comando `visudo`
     - Per usare nano/vim/micro con `visudo` usare `EDITOR=<editor> visudo`
     - il comando per aggiungere l'utente ordissimo al gruppo sudo è: `usermod -aG sudo ordissimo`
-1. Potrebbe essere oppurtuno installare un terminale per poi poter, ad esempio, sistemare la risoluzione dello schermo, per quello controllare il [FAQ](#cambio-risoluzione)
+1. Potrebbe essere oppurtuno installare un terminale per poi poter, ad esempio, sistemare la risoluzione dello schermo, per quello controllare il [FAQ](#--cambio-risoluzione)
 1. Riavviare, attendere che compaia la scelta della lingua, selezionarne una a scelta, aspettare il riavvio, e fare il login nell'utente
     - La tastiera sarà con il layout AZERTY in automatico, **non** lo si può cambiare in base alle nostre conoscenze, perciò la password sarà: `ordissiòo` (la `ò` sarebbe la `m` in AZERTY)
     - Sarà necessario fare 2 volte il login
@@ -76,7 +76,7 @@ Viene altamente scoraggiato l'uso di [Hardware fisico](#hardware-fisico), quindi
 ### - **Cambio Risoluzione**
 
 > **WARNING**:
-> Per poter cambiare la risoluzione e necessario aver installato il [terminale](#installazione-del-terminale) ed avere il sistema in [Read-Write](#filesystem-read-write)
+> Per poter cambiare la risoluzione e necessario aver installato il [terminale](#--installazione-del-terminale) ed avere il sistema in [Read-Write](#--filesystem-read-write)
 
 Per cambiare la risoluzione (ammesso che sei in una VM) fai `sudo nano /etc/X11/xorg.conf` e scrivi questo:
 
@@ -93,7 +93,7 @@ Questo cambierà la risoluzione a `1360x768`. Dovrebbe essere evidente come camb
 ### - **Installazione del terminale**
 
 > **Warning**:
-> Per poter installare il terminale e necessario avere il sistema in [Read-Write](#filesystem-read-write)
+> Per poter installare il terminale e necessario avere il sistema in [Read-Write](#--filesystem-read-write)
 
 Il terminale NON è installato by-default su ordissimo, perciò bisogna installarlo a mano, il procedimento cambia in base alla situazione corrente del sistema.
 
@@ -109,7 +109,7 @@ Il terminale NON è installato by-default su ordissimo, perciò bisogna installa
 1. Ora quando si riavvia e si fa il setup iniziale di ordissimo, aka lingua, si dovrebbe trovare il terminale tra le applicazioni
     - Per impostare il layout italiano **sul terminale** usare `setxkbmap it`
         - Opzionalmente si puo metterlo nel file `.bashrc`
-            - Potrebbe essere necessario impostare di nuovo il systema in [Read-Write](#filesystem-read-write)
+            - Potrebbe essere necessario impostare di nuovo il systema in [Read-Write](#--filesystem-read-write)
 
 #### - Da sistema post-riavvio dopo install.sh
 
@@ -137,7 +137,7 @@ apt install xfce4-terminal
 7. Una volta riavviato sul desktop dovrebbe esserci il terminale
     - Per impostare il layout italiano **sul terminale** usare `setxkbmap it`
         - Opzionalmente si puo metterlo nel file `.bashrc`
-            - Potrebbe essere necessario impostare di nuovo il systema in [Read-Write](#filesystem-read-write)
+            - Potrebbe essere necessario impostare di nuovo il systema in [Read-Write](#--filesystem-read-write)
 
 ### - **FileSystem Read-Write**
 
@@ -215,4 +215,4 @@ VmWare e un altra opzione per fare la macchina virtuale, pero ci sono dei requis
 
 Le VirtualBox guest addictions o i VmWare tools NON sono necessario per il funzionamento della macchina virtuale, e non sono nemmeno raccomandati da installare per via che non è garantito che funzionino correttamente
 
-Un motivo per cui potresti voler installare le guest addictions o i vmware tools e per la risoluzione dello schermo, ma per questo problema e meglio che si fa a mano controllando il [FAQ corrispondente](#cambio-risoluzione)
+Un motivo per cui potresti voler installare le guest addictions o i vmware tools e per la risoluzione dello schermo, ma per questo problema e meglio che si fa a mano controllando il [FAQ corrispondente](#--cambio-risoluzione)
