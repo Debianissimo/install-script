@@ -217,8 +217,8 @@ VmWare e un altra opzione per fare la macchina virtuale, pero ci sono dei requis
     - Se non sai come impostarlo di tipo `SATA` bisogna usare Vmware Workstation Pro con il setup avanzato durante la creazione oppure su Vmware Workstation Player devi rimuovere il disco per poi ri-aggiungerlo come `SATA`, dovrebbe esserci l'opzione nel wizard di aggiunta disco
 - Armarsi di TANTA pazienza poichè per motivi a noi sconosiuti a `lilo` non sembra piacere vmware, e quindi durante il boot resta alla schermata di boot anche per **__20 minuti__** 
 
-### - **Guest Addictions**
+### - **Guest additions**
 
-Le VirtualBox guest addictions o i VmWare tools NON sono necessario per il funzionamento della macchina virtuale, e non sono nemmeno raccomandati da installare per via che non è garantito che funzionino correttamente
+Le VirtualBox guest additions o i VmWare tools NON sono necessario per il funzionamento della macchina virtuale, e non sono nemmeno raccomandati da installare per via che non è garantito che funzionino correttamente
 
-Un motivo per cui potresti voler installare le guest addictions o i vmware tools e per la risoluzione dello schermo, ma per questo problema e meglio che si fa a mano controllando il [FAQ corrispondente](#--cambio-risoluzione)
+Un motivo per cui potresti voler installare le guest additions o i vmware tools e per la risoluzione dello schermo, ma per questo problema e meglio che si fa a mano controllando il [FAQ corrispondente](#--cambio-risoluzione)
