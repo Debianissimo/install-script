@@ -73,22 +73,33 @@ Viene altamente scoraggiato l'uso di [Hardware fisico](#--hardware-fisico), quin
 
 ## FAQ
 
-### - **Cambio Risoluzione**
+### - **FileSystem Read-Write**
 
-> **Warning**:
-> Per poter cambiare la risoluzione e necessario aver installato il [terminale](#--installazione-del-terminale) ed avere il sistema in [Read-Write](#--filesystem-read-write)
+Ordissimo imposta il sistema in readonly (RO) by-default, per qualche motivo a noi ignoto, tuttavia lo si puo impostare Read-Write (RW) in 2 modi
 
-Per cambiare la risoluzione (ammesso che sei in una VM) fai `sudo nano /etc/X11/xorg.conf` e scrivi questo:
+Per controllare se il sistema e stato avviato in RO oppure RW si puo provare a scrivere un file su una directory tipo /usr (usando sudo altrimenti da un permesso negato) oppure facendo `cat /proc/cmdline`, che mostrerà i parametri dati al kernel, tra questi ci dovrebbe essere `ro` o `rw`
 
-<!-- markdownlint-disable-next-line -->
-```
-Section "Monitor"
- Identifier "Virtual1"
- Option "PreferredMode" "1360x768"
-EndSection
-```
+#### - Metodo 1, non permanente
 
-Questo cambierà la risoluzione a `1360x768`. Dovrebbe essere evidente come cambiare la risuluzione, in ogni caso basta cambiare la riga dove ce scritto `Option "PreferredMode"` e cambiare `1360x768` con la risoluzione a scelta
+Utilizzando il comando seguente da bash e possibile rendere il filesystem in RW, questa modifica pero non e permanente e va rifatta ogni riavvio 
+
+1. Eseguire il comando `for m in $(ls /); do mount -o remount,rw /$m; done`
+    - Il comando esegue `ls /`, per ogni file / cartella che trova prova a rimontare la suddetta cartella in r/w, pertanto quanto tenta di montare un file ci sara un errore, questi errori possono essere ignorati e non succede nulla
+
+- Questo metodo da cio che abbiamo notato sembra mettere sempre il sistema in RW senza problemi
+
+#### - Metodo 2, permanente
+
+Editando la configuratione di lilo e possibile fare in modo che LILO non imposti il filesystem come RO al boot, questa modifica viene conservata tra i riavii del sistema
+
+1. Editare il file `/etc/lilo.conf` con le seguenti modifiche
+    - Ci saranno 3 `Read-Only` nel file in totale, ogniuna di queste volte che compare questa voce bisogna cambiarla con `Read-Write`
+    - Salvare il file
+1. Eseguire `sudo lilo`
+1. Riavviare
+1. Verificare che si possa scrivere
+
+- Questo metodo potrebbe non sembre mettere tutto il sistema in RW per motivazioni a noi sconosciute, quindi ogni tanto potrebbe essere necessario dover fare comunque il metodo non permanente
 
 ### - **Installazione del terminale**
 
@@ -139,33 +150,23 @@ apt install xfce4-terminal
         - Opzionalmente si puo metterlo nel file `.bashrc`
             - Potrebbe essere necessario impostare di nuovo il systema in [Read-Write](#--filesystem-read-write)
 
-### - **FileSystem Read-Write**
+### - **Cambio Risoluzione**
 
-Ordissimo imposta il sistema in readonly (RO) by-default, per qualche motivo a noi ignoto, tuttavia lo si puo impostare Read-Write (RW) in 2 modi
+> **Warning**:
+> Per poter cambiare la risoluzione e necessario aver installato il [terminale](#--installazione-del-terminale) ed avere il sistema in [Read-Write](#--filesystem-read-write)
 
-Per controllare se il sistema e stato avviato in RO oppure RW si puo provare a scrivere un file su una directory tipo /usr (usando sudo altrimenti da un permesso negato) oppure facendo `cat /proc/cmdline`, che mostrerà i parametri dati al kernel, tra questi ci dovrebbe essere `ro` o `rw`
+Per cambiare la risoluzione (ammesso che sei in una VM) fai `sudo nano /etc/X11/xorg.conf` e scrivi questo:
 
-#### - Metodo 1, non permanente
+<!-- markdownlint-disable-next-line -->
+```
+Section "Monitor"
+ Identifier "Virtual1"
+ Option "PreferredMode" "1360x768"
+EndSection
+```
 
-Utilizzando il comando seguente da bash e possibile rendere il filesystem in RW, questa modifica pero non e permanente e va rifatta ogni riavvio 
+Questo cambierà la risoluzione a `1360x768`. Dovrebbe essere evidente come cambiare la risuluzione, in ogni caso basta cambiare la riga dove ce scritto `Option "PreferredMode"` e cambiare `1360x768` con la risoluzione a scelta
 
-1. Eseguire il comando `for m in $(ls /); do mount -o remount,rw /$m; done`
-    - Il comando esegue `ls /`, per ogni file / cartella che trova prova a rimontare la suddetta cartella in r/w, pertanto quanto tenta di montare un file ci sara un errore, questi errori possono essere ignorati e non succede nulla
-
-- Questo metodo da cio che abbiamo notato sembra mettere sempre il sistema in RW senza problemi
-
-#### - Metodo 2, permanente
-
-Editando la configuratione di lilo e possibile fare in modo che LILO non imposti il filesystem come RO al boot, questa modifica viene conservata tra i riavii del sistema
-
-1. Editare il file `/etc/lilo.conf` con le seguenti modifiche
-    - Ci saranno 3 `Read-Only` nel file in totale, ogniuna di queste volte che compare questa voce bisogna cambiarla con `Read-Write`
-    - Salvare il file
-1. Eseguire `sudo lilo`
-1. Riavviare
-1. Verificare che si possa scrivere
-
-- Questo metodo potrebbe non sembre mettere tutto il sistema in RW per motivazioni a noi sconosciute, quindi ogni tanto potrebbe essere necessario dover fare comunque il metodo non permanente
 
 ### - **Errore durante l'installazione**
 
