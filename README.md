@@ -75,7 +75,7 @@ Viene altamente scoraggiato l'uso di [Hardware fisico](#--hardware-fisico), quin
 
 ### - **Cambio Risoluzione**
 
-> **WARNING**:
+> **Warning**:
 > Per poter cambiare la risoluzione e necessario aver installato il [terminale](#--installazione-del-terminale) ed avere il sistema in [Read-Write](#--filesystem-read-write)
 
 Per cambiare la risoluzione (ammesso che sei in una VM) fai `sudo nano /etc/X11/xorg.conf` e scrivi questo:
